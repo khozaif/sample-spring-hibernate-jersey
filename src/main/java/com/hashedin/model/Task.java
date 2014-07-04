@@ -3,6 +3,7 @@ package com.hashedin.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -18,32 +19,70 @@ public class Task
 
     @Id
     @GeneratedValue
-    private Long id;
-
-    private String title;
-
-
-    public Long getId()
-    {
-        return id;
-    }
-
-
-    public String getTitle()
-    {
-        return title;
-    }
-
-
-    public void setId(Long id)
-    {
-        this.id = id;
-    }
-
-
-    public void setTitle(String title)
-    {
-        this.title = title;
-    }
-
-}
+    private Long taskId;
+    
+    private String taskName;
+    private String taskPriority;
+    private String taskDueDate;
+    private String taskCloseDate;
+    private String taskDescription;
+    
+    
+    @ManyToOne 
+    private Project projectId;
+    
+    @ManyToOne
+    private Collabarators assignee;
+    
+    
+	public Project getProjectId() {
+		return projectId;
+	}
+	public void setProjectId(Project projectId) {
+		this.projectId = projectId;
+	}
+	public Collabarators getAssignee() {
+		return assignee;
+	}
+	public void setAssignee(Collabarators assignee) {
+		this.assignee = assignee;
+	}
+	public Long getTaskId() {
+		return taskId;
+	}
+	public void setTaskId(Long taskId) {
+		this.taskId = taskId;
+	}
+	public String getTaskName() {
+		return taskName;
+	}
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+	}
+	public String getTaskPriority() {
+		return taskPriority;
+	}
+	public void setTaskPriority(String taskPriority) {
+		this.taskPriority = taskPriority;
+	}
+	
+	public String getTaskDueDate() {
+		return taskDueDate;
+	}
+	public void setTaskDueDate(String taskDueDate) {
+		this.taskDueDate = taskDueDate;
+	}
+	public String getTaskCloseDate() {
+		return taskCloseDate;
+	}
+	public void setTaskCloseDate(String taskCloseDate) {
+		this.taskCloseDate = taskCloseDate;
+	}
+	public String getTaskDescription() {
+		return taskDescription;
+	}
+	public void setTaskDescription(String taskDescription) {
+		this.taskDescription = taskDescription;
+	}
+    
+ }
