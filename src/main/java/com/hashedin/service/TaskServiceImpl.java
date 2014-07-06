@@ -51,10 +51,10 @@ public class TaskServiceImpl implements TaskService
 
 
     @Transactional
-    public Task delete(Long taskId)
+    public Task delete(Long projectId)
     {
         // Deletes the task with the give taskId and returns the same.
-        return taskRepository.delete(taskId);
+        return taskRepository.delete(projectId);
     }
 
 }
