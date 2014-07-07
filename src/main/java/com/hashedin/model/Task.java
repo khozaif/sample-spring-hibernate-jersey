@@ -26,20 +26,27 @@ public class Task
     private String taskDueDate;
     private String taskCloseDate;
     private String taskDescription;
-    
+    private String taskStatus;
     
     @ManyToOne 
-    private Project projectId;
+    private Project projectid;
     
     @ManyToOne
     private Collabarators assignee;
     
     
+    
+    public String getTaskStatus() {
+		return taskStatus;
+	}
+	public void setTaskStatus(String tasktStatus) {
+		this.taskStatus = tasktStatus;
+	}
 	public Project getProjectId() {
-		return projectId;
+		return projectid;
 	}
 	public void setProjectId(Project projectId) {
-		this.projectId = projectId;
+		this.projectid = projectId;
 	}
 	public Collabarators getAssignee() {
 		return assignee;

@@ -39,6 +39,15 @@ public class TaskResource
         // Handles GET on /tasks. Lists all the tasks we have in our system.
         return taskService.findAll();
     }
+    
+    @GET
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Path("/collabarators/{userId}")
+    public List<Task> tasklist()
+    {
+        // Handles GET on /tasks for a particular user. Lists all the tasks we have in our system.
+        return taskService.findAll();
+    }
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
@@ -67,6 +76,7 @@ public class TaskResource
     public Task update(Task task, @PathParam("taskId") Long taskId)
     {
         // Handles PUT on /tasks/taskId. Updates the existing task with the new values.
+    
         return taskService.update(task, taskId);
     }
     

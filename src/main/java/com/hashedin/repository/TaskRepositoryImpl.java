@@ -7,7 +7,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
-
 import com.hashedin.model.Task;
 
 @Repository("taskRepository")
@@ -37,11 +36,13 @@ public class TaskRepositoryImpl implements TaskRepository
         return results;
     }
 
-    @Override
+    
     public Task update(Task task, Long taskId)
     {
         // TODO Auto-generated method stub
-        return null;
+    
+    	return null;
+       
     }
 
     @Override
@@ -51,5 +52,7 @@ public class TaskRepositoryImpl implements TaskRepository
         em.remove(taskToBeDeleted);
         return taskToBeDeleted;
     }
+
+	
 
 }
